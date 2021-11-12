@@ -38,6 +38,7 @@ h1 {
 
  /*Body*/
  body {
+   top: auto;
     font-family: 'Lato', sans-serif;
     color: var(--color-dark);
     background: white;
