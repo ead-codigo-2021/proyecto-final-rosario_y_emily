@@ -1,17 +1,15 @@
-// When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
-window.onscroll = function() {scrollFunction()};
+$(document).ready(function(){
 
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("navbar").style.padding = "2px 10px";
-    document.getElementById("logo").style.fontSize = "25px";
-  } else {
-    document.getElementById("navbar").style.padding = "10px 10px";
-    document.getElementById("logo").style.fontSize = "35px";
-  }
-}
-const button = document.querySelector('[href="#menu"]');
-const menu = document.querySelector('#menu');
-button.addEventListener('click', function(){
-	menu.classList.toggle('menu--shown');
+  var menuBtn = $('.menu-icon'),
+      menu = $('.navegation ul');
+
+  menuBtn.click(function() {
+
+          if( menu.hasClass('show')){
+              menu.removeClass('show');
+          } else{
+
+              menu.addClass('show');
+          }
+  });
 });
