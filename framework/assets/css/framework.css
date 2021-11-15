@@ -276,15 +276,14 @@ list-style: none;
 /*Contacto*/
 .targeta-contacto {
   width: 100%;
-  right: 0;
-  left: 0;
-
+  justify-content: center;
 }
 .card{
   text-align: center;
 }
 .targeta-contacto .card {
   width: auto;
+  position: relative;
   height:430px;
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -488,17 +487,16 @@ box-sizing: border-box;
   display: block;
 }
 
-#cont-cliente > @media only screen and (max-width:767px) 
-  
-} screen and (min-width: 590px){
-.cont-cliente {
-  grid-template-columns: repeat(2,1fr);
-}
 
-#cont-cliente > @media screen and (min-width: 960px){
+@media only screen and (max-width:590px){
   .cont-cliente {
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
   }
+  
+  @media screen and (min-width: 960px){
+    .cont-cliente {
+      grid-template-columns: repeat(3,1fr);
+    }
 /*contenido de la tarjeta*/
 
 

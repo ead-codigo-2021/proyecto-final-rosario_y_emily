@@ -1,0 +1,505 @@
+/*Resets de estilos*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables*/
+h1 {
+    font-size: 2rem;
+    color: var(--color-dark);
+    padding: none;
+    padding-left: 4rem;
+    padding-top: 1rem;
+    text-align: left;
+    line-height: 1.3em;
+}
+p {
+  margin-bottom: 1.6em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+}
+ /*Elemento raíz*/
+ :root {
+    font-family: 'Lato', sans-serif;
+    --font-family-base: 'Lato', sans-serif;
+    --color-bg: #eeeeee;
+    --color-dark: #333;
+    --color-white: #fff;
+    --color-transparent: #a9b2ae8a;
+    --max-width-container: 1000px;
+ }
+
+ html {
+     font-size: 16px;
+     height: 100%;
+ }
+
+ @media screen and ( max-width: 400px)
+ {
+    html {
+        font-size: 13px;
+    }
+ }
+
+ /*Body*/
+ body {
+    top: auto;
+    font-family: 'Lato', sans-serif;
+    color: var(--color-dark);
+    background: white;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    text-align: justify;
+    margin: 0;
+}
+
+ font-weight: 300;
+
+/* Container */
+.container {
+  width: 85%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+.container {
+  width: 85%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.site-main {
+    padding-top: 12rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-bottom: 2rem;
+}
+
+
+
+/*header*/
+.header {
+  background:#333;
+  color: white;
+  padding: 2rem 0;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.header a {
+color:white;
+text-decoration: none;
+}
+
+.logo-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  text-align: left;
+  letter-spacing: 15px;
+  font-size: 1.3em;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.navegation ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+  .navegation ul li {
+      display: inline-block;
+  }
+
+  .navegation ul li a {
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: all 0.4s linear;
+      border-radius: 5px;
+  }
+  .navegation ul li a:hover {
+      background: rgb(139, 134, 134) ;
+  }
+
+@media only screen and (max-width:767px) {
+
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-size: 1.2em;
+}
+  .navegation {
+      width: 100%;
+      margin-top: 1rem;
+  }
+  .navegation ul{
+      display: none;
+  }
+  .navegation ul.show {
+      display: block;
+  }
+          .navegation ul li {
+              display: block;
+          }
+      
+          .navegation ul li a {
+              display: block;
+              padding: 0.5rem 0;
+              transition: all 0.4s linear;
+              border-radius: 5px;
+          }
+          .navegation ul li a:hover {
+              background: rgb(139, 134, 134) ;
+          }
+      
+}
+  .home-post__content {
+    width: auto;
+  }
+
+ /* Tarjetas */
+.tiles {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+}
+.tiles article {
+	position: relative;
+	width: 100%;
+	padding-top: 96%;
+	transition: var(--transition-base);
+}
+.tiles article .image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--color-dark);
+	transition: var(--transition-base);
+}
+.tiles article .image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.tiles article .image::after {
+	content: '';
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: var(--color-transparent);
+	transition: var(--transition-base);
+}
+/* Contenido de cada tarjeta */
+.tiles article a {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	text-decoration: none;
+	color: #fff;
+	text-shadow: 0 0 2rem #000;
+	transition: var(--transition-base);
+}
+/* Contenido de la tarjeta */
+.tiles article a .content {
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: var(--transition-base);
+}
+.tiles article a:hover .content {
+	max-height: 100%;
+	overflow: unset;
+	opacity: 1;
+}
+/* Estado :hover de la tarjeta */
+.tiles article:hover {
+	background-color:  var(--color-transparent);
+}
+.tiles article:hover .image {
+	transform: scale(1.1);
+}
+.tiles article:hover .image::after {
+	background-color: rgba(0, 0, 0, .45);
+}
+@media (min-width: 768px) {
+	.tiles {
+		grid-template-columns: 1fr 1fr;
+		gap: 2.5rem;
+	}
+}
+@media (min-width: 1024px) {
+	.tiles {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+@media (min-width: 1300px) {
+	.tiles {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}
+/*Contacto*/
+.targeta-contacto {
+  width: 100%;
+  justify-content: center;
+}
+.card{
+  text-align: center;
+}
+.targeta-contacto .card {
+  width: auto;
+  position: relative;
+  height:430px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 20px;
+  text-align: 20px;
+  transition: all 0.25s;
+}
+
+  .targeta-contacto .card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, a0.2)
+
+}
+
+.targeta-contacto .card img {
+  width: 100%;
+  height: 220px;
+}
+
+.targeta-contacto .card h4 {
+  font-weight:600;
+  text-align: center;
+}
+.targeta-contacto .card p{
+  padding: 0 1rem;
+  font-size: 16px;
+  font-weight:300;
+  text-align: justify;
+}
+.targeta-contacto .card a {
+  text-align:center;
+}
+.titulo-contacto {
+  font-size: 2rem;
+  color: var();
+  padding: none;
+  padding-left: 4rem;
+  padding-top: 1rem;
+  text-align: left;
+  line-height: 1.3em;
+}
+/*servicio*/
+#tablaLaWebera {
+  margin: auto;
+  background-color: white;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  background-color: rgba(128, 128, 128, 0.11);
+  box-sizing: border-box;
+  margin-bottom: 4rem;
+}
+
+#tablaLaWebera > table {  
+  background-color: white;  
+  width: 100%;  
+} 
+#tablaLaWebera > tr:nth-child(even){
+  background: #FFFFFF;
+}
+#tablaLaWebera > tr:nth-child(odd){
+  background: #666666;
+}
+#tablaLaWebera > tbody tr {  
+  background-color: #FFFFFF;  
+}  
+#tablaLaWebera > tbody tr.impar {  
+  background-color: #666666;  
+  color: white;  
+}
+
+
+/*slideshow about*/
+#framework-slider {
+  margin: auto;
+  background-color: white;
+  max-width: 800px;
+  width: 100%;
+  padding: 30px;
+  background-color: var(--color-bg);
+  box-sizing: border-box;
+}
+#framework-slider > ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#framework-slider > ul.slider{
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  height: 300px;
+}
+
+#framework-slider > ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:#fff;
+}
+
+#framework-slider > ul.slider li img{
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+#framework-slider > ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+#framework-slider > ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+#framework-slider > .menu{
+  text-align: center;
+  margin: 20px;
+}
+
+#framework-slider > .menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+#framework-slider > .menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  border-radius: 100%;
+}
+
+/*container-srvicio*/
+#cont-cliente{
+padding: 0;
+margin: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.cont-cliente {
+  width: 100%;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  grid-gap: 30px;
+}
+.item{
+  background-color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 rgba(0, 0,0, .095);
+
+  transition: all 300ms;
+
+  position: relative;
+}
+
+.item::after {
+  content: "";
+  background-color: rgba(179, 229, 252, .1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(0);
+  transition: all 300ms;
+  opacity: 0;
+}
+
+.item:hover:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.item:hover {
+  padding: 1em;
+}
+
+.item-text{
+  padding: 1em;
+}
+.item-img {
+  max-width: 100%;
+  display: block;
+}
+
+@media only screen and (max-width:590px){
+.cont-cliente {
+  grid-template-columns: repeat(2,1fr);
+}
+
+@media screen and (min-width: 960px){
+  .cont-cliente {
+    grid-template-columns: repeat(3,1fr);
+  }
+/*contenido de la tarjeta*/
+
+
+/*footer*/
+.footer{
+  text-align: center;
+}
