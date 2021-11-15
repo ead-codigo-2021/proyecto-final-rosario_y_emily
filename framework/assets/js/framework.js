@@ -52,6 +52,13 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
+$('.bxslider').bxSlider({
+  auto: true,
+  autoControls: true,
+  stopAutoOnClick: true,
+  pager: true,
+  slideWidth: 600
+});
 
 
 // Add active class to the current button (highlight it)

@@ -7,7 +7,7 @@
 /* Variables*/
 h1 {
     font-size: 2rem;
-    color: var();
+    color: var(--color-dark);
     padding: none;
     padding-left: 4rem;
     padding-top: 1rem;
@@ -16,6 +16,12 @@ h1 {
 }
 p {
   margin-bottom: 1.6em;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
 }
  /*Elemento raíz*/
  :root {
@@ -76,9 +82,6 @@ p {
     padding-bottom: 2rem;
 }
 
-p {
-  margin-bottom: 1.6em;
-}
 
 
 /*header*/
@@ -271,11 +274,17 @@ list-style: none;
 	}
 }
 /*Contacto*/
+.targeta-contacto {
+  width: 100%;
+  right: 0;
+  left: 0;
+
+}
 .card{
   text-align: center;
 }
 .targeta-contacto .card {
-  width:300px;
+  width: auto;
   height:430px;
   border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -292,7 +301,7 @@ list-style: none;
 }
 
 .targeta-contacto .card img {
-  width: 330px;
+  width: 100%;
   height: 220px;
 }
 
@@ -325,8 +334,9 @@ list-style: none;
   max-width: 800px;
   width: 100%;
   padding: 30px;
-  background-color: var(--color-bg);
+  background-color: rgba(128, 128, 128, 0.11);
   box-sizing: border-box;
+  margin-bottom: 4rem;
 }
 
 #tablaLaWebera > table {  
@@ -419,17 +429,15 @@ list-style: none;
 }
 
 /*container-cliente*/
-#container.cliente{
+#cont-cliente{
 padding: 0;
 margin: 0;
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box;
 box-sizing: border-box;
-background-color: #eeeeee;
 }
-.container-cliente {
-  
-  width: 90%;
+.cont-cliente {
+  width: 100%;
   max-width: 850px;
   margin-left: auto;
   margin-right: auto;
@@ -480,22 +488,21 @@ background-color: #eeeeee;
   display: block;
 }
 
-#container.cliente > @media screen and (min-width: 590px){
-.container-cliente {
+#cont-cliente > @media only screen and (max-width:767px) 
+  
+} screen and (min-width: 590px){
+.cont-cliente {
   grid-template-columns: repeat(2,1fr);
 }
 
-#container.cliente > @media screen and (min-width: 960px){
-  .container-cliente {
+#cont-cliente > @media screen and (min-width: 960px){
+  .cont-cliente {
     grid-template-columns: repeat(3,1fr);
   }
-}
+/*contenido de la tarjeta*/
 
-/*Footer*/
-.footer {
-text-align: center;
-padding-top: 2rem;
-margin-top: 6rem;
-background-color: var(--color-dark);
-}
 
+/*footer*/
+.footer{
+  text-align: center;
+}
